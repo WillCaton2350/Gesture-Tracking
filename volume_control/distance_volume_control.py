@@ -9,7 +9,7 @@ camera_width,camera_height = [640,480]
 cap = cv2.VideoCapture(0)
 cap.set(3, camera_width)
 cap.set(4, camera_height)
-# 3 and 4 is the property id
+# 3 and 4 are the property ids
 volume_min = 0
 volume_max = 100
 current_volume = volume_min
@@ -32,7 +32,7 @@ else:
             cv2.circle(img, (x1, y1), 10, (255, 0, 255), cv2.FILLED)
             cv2.circle(img, (x2, y2), 10, (255, 0, 255), cv2.FILLED)
             cv2.line(img, (x1,y1),(x2,y2),(255,0,255),3)
-            # middle circle opbject betweeb the two landmarks or points 4 / 8
+            # middle circle object between the two landmarks or points 4 & 8
             cv2.circle(img, (center_x, center_y), 10, (255,0,255), cv2.FILLED)
             length = math.hypot(x2-x1,y2-y1)
             print("\n",length) 
@@ -51,9 +51,6 @@ else:
                 print(f'Volume set to {int(current_volume)}')
         else:
             pass
-        # gets the positon of the landmarks
-        # setting draw to False so that it doesn't overwrite the 
-        # draw=True in the function coming from the hand_tracking_module
         current_timestamp = datetime.now()
         time_difference = current_timestamp - previous_timestamp
         fps = 1 / time_difference.total_seconds()
