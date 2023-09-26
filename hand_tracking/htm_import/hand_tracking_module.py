@@ -36,7 +36,7 @@ class handDectector:
         if self.results.multi_hand_landmarks:
             hand_object = self.results.multi_hand_landmarks[hand_num]
             for id, landmark in enumerate(hand_object.landmark):
-                # we are mapping the iteration (hand_num) in 
+                # we are mapping the iteration (hand_object) in 
                 # the results to the landmark iteration in the nested for loop
                 print(id,landmark)
                 height, width, _ = img.shape
