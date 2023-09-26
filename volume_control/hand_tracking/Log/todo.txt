@@ -1,0 +1,8 @@
+{Updates}
+
+After creating the hand tracking module and identifying the thumb and pointer finger with the 4 and 8 values
+We calculated the center point and the distance between the 4th and 8th lanmark
+
+{Next}
+
+Install PyCaw to map the landmarks to the volume control slider.
