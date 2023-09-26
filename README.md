@@ -1,2 +1,2 @@
 # Gesture-Tracking
-Hand tracking in python opencv 
+Hand tracking in python and opencv 
