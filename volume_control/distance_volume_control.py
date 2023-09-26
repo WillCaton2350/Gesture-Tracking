@@ -10,7 +10,6 @@ cap = cv2.VideoCapture(0)
 cap.set(3, camera_width)
 cap.set(4, camera_height)
 # 3 and 4 is the property id
-#osascript.run("-e" + "output volume of (get volume settings) & output muted of (get volume settings)",19, False)
 volume_min = 0
 volume_max = 100
 current_volume = volume_min
@@ -37,15 +36,10 @@ else:
             cv2.circle(img, (center_x, center_y), 10, (255,0,255), cv2.FILLED)
             length = math.hypot(x2-x1,y2-y1)
             print("\n",length) 
-            # I need to convert my finger range values to the index of the volume controller with apple script.
-            # So I need to map the length variable which calculatees the distance between the distance between each 
-            # finger to the volume controller with apple script or pyautogui. 
-            # The hand ranges are a max volume = max finger distance (max_distance=300, minimum_distance_threshold=40) 
-            # With this we can tell that the max_distance = 100 or full volume and the minimum_distance = 0 once it passes the threshold of 40
-            if length<40:
+            if length<55:
                 # change the color of the middle circle
                 cv2.circle(img, (center_x, center_y), 10, (0, 255, 0), cv2.FILLED)
-            # Separate conditional to check if the volume range is passed the 40 threshold or reaches the volume range of 250
+            # A separate conditional to check if the volume range has passed the threshold of 40 or reaches the max volume range of 200
             if length <= 55 or length >= 200:
                 target_volume = np.interp(length, [55, 200], [volume_min, volume_max])
                 step = 1 
