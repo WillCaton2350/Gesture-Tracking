@@ -1,0 +1,27 @@
+{Updates}
+
+After creating the hand tracking module and identifying the thumb and pointer finger with the 4 and 8 values
+We calculated the center point and the distance between the 4th and 8th lanmark
+
+{Next}
+
+- Install PyCaw to map the landmarks to the volume control slider.
+ * use osascript instead of PyCaw.(PyCaw is windows exclusive)
+✅ - Use a bounding box instead of the linear connections between individual landmark points
+- I need to configure the hand detector variable from the HandTrackingModule in cvzone to be triggered by a certain hand gesture
+ * landmark[8] = start_listener
+ * landmark[8]+ landmark[12] = stop_listener or freeze last landmark placement within the pixels
+- Detect the speed of landmark[0]
+ * if landmark[0] is removed from the frame at 10px per second
+  ** Recognize this as landmark[0] leaving the frame and not the user setting a new volume 
+   *** freezes or sleeps the camera untill landmark[0] is identified
+- Instead of landmark[4] and landmark[8] 
+ * I can set it the vol to 0 when every landmark is triggered; the equivalent to a closed fist
+ * it can be a sub setting within the force feature
+ * or it can be apart of the conditional, and addition to landmark[4] and landmark[8]
+- Any kind of freeze conditional trigger/hand sign 
+
+{$Pointers}
+- You dont need imshow() to run the script. It isn't like root.mainloop(). It only displays the camera.
+ ✅ * Remove imshow() function
+
