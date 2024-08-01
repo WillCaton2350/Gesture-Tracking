@@ -1,3 +1,4 @@
 # Gesture-Tracking
-Hand tracking in python and opencv 
-The landmarks are now behind a bounding box
+Hand tracking in python and opencv.  
+The landmarks are now behind a bounding box. 
+Ai computer vision feature.
